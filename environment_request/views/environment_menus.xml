@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Menú raíz de la app -->
+    <menuitem id="menu_environment_root" name="Entornos" sequence="30"
+              web_icon="environment_request,static/description/icon.png"/>
+
+    <!-- Submenú de solicitudes -->
+    <menuitem id="menu_environment_requests" name="Solicitudes" parent="menu_environment_root" sequence="10"/>
+
+    <!-- Acciones -->
+    <record id="action_environment_request_my" model="ir.actions.act_window">
+        <field name="name">Mis solicitudes</field>
+        <field name="res_model">environment.owner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[("user_id", "=", uid)]</field>
+        <field name="context">{"default_user_id": uid}</field>
+    </record>
+
+    <record id="action_environment_request_pending" model="ir.actions.act_window">
+        <field name="name">Solicitudes pendientes</field>
+        <field name="res_model">environment.owner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[("state", "=", "requested")]</field>
+    </record>
+
+    <record id="action_environment_request_all" model="ir.actions.act_window">
+        <field name="name">Todas las solicitudes</field>
+        <field name="res_model">environment.owner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+      <!-- Menús de solicitudes -->
+    <menuitem
+        id="menu_environment_request_my"
+        name="Mis solicitudes"
+        parent="menu_environment_requests"
+        action="action_environment_request_my"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_environment_request_pending"
+        name="Solicitudes pendientes"
+        parent="menu_environment_requests"
+        action="action_environment_request_pending"
+        groups="environment_request.group_environment_request_admin"
+        sequence="20"
+    />
+
+    <menuitem
+        id="menu_environment_request_all"
+        name="Todas las solicitudes"
+        parent="menu_environment_requests"
+        action="action_environment_request_all"
+        groups="environment_request.group_environment_request_admin"
+        sequence="30"
+    />
+
+    <!-- Menú de configuraciones -->
+    <menuitem id="menu_environment_config_root" name="Configuraciones" parent="menu_environment_root" sequence="20" groups="environment_request.group_environment_request_admin"/>
+
+    <record id="action_environment_versions" model="ir.actions.act_window">
+        <field name="name">Versiones de Odoo</field>
+        <field name="res_model">environment.versions</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_environment_versions"
+        name="Versiones de Odoo"
+        parent="menu_environment_config_root"
+        action="action_environment_versions"
+        groups="environment_request.group_environment_request_admin"
+        sequence="10"
+    />
+
+    <record id="action_environment_config" model="ir.actions.act_window">
+        <field name="name">Configuraciones de entornos</field>
+        <field name="res_model">environment.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_environment_config"
+        name="Parámetros de entornos"
+        parent="menu_environment_config_root"
+        action="action_environment_config"
+        groups="environment_request.group_environment_request_admin"
+        sequence="20"
+    />
+
+</odoo>

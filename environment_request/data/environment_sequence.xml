@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="seq_environment_owner" model="ir.sequence">
+        <field name="name">Solicitud de entorno</field>
+        <field name="code">environment.owner</field>
+        <field name="prefix">ENV%(year)s-</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

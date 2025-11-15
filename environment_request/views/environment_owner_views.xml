@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_environment_owner_tree" model="ir.ui.view">
+        <field name="name">environment.owner.tree</field>
+        <field name="model">environment.owner</field>
+        <field name="arch" type="xml">
+            <tree string="Solicitudes de entornos" default_order="create_date desc">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="environment_type"/>
+                <field name="environment_version_id"/>
+                <field name="customer_id"/>
+                <field name="user_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_environment_owner_form" model="ir.ui.view">
+        <field name="name">environment.owner.form</field>
+        <field name="model">environment.owner</field>
+        <field name="arch" type="xml">
+            <form string="Solicitud de entorno">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="requested,active,rejected"/>
+
+                    <button name="action_request_env"
+                            type="object"
+                            string="Solicitar"
+                            invisible="state != 'draft'"
+                            class="btn-primary"/>
+
+                    <button name="action_draft"
+                            type="object"
+                            string="Editar"
+                            invisible="state != 'requested'"/>
+
+                    <button name="action_confirm_env"
+                            type="object"
+                            string="Confirmar solicitud"
+                            class="btn-primary"
+                            invisible="state != 'requested'"
+                            groups="environment_request.group_environment_request_admin"/>
+
+                    <button name="action_cancel_env"
+                            type="object"
+                            string="Cancelar entorno"
+                            invisible="state not in ('active','requested')"
+                            groups="environment_request.group_environment_request_admin"/>
+
+                    <button name="action_drop_env"
+                            type="object"
+                            string="Eliminar entorno"
+                            invisible="state not in ('active','requested')"
+                            groups="environment_request.group_environment_request_admin"/>
+
+
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="customer_id"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="environment_type"/>
+                            <field name="environment_version_id"/>
+                            <field name="create_date" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group string="Rango de fechas">
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+
+                    <group string="Conectividad">
+                        <group>
+                            <field name="is_custom_ip"/>
+                            <field name="custom_ip" readonly="is_custom_ip == False"/>
+                        </group>
+                        <group>
+                            <field name="is_custom_port"/>
+                            <field name="custom_port" readonly="is_custom_port == False"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Descripción">
+                            <field name="description" widget="html"/>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <div class="oe_chatter" groups="!meta_treatment_efficacy_monitoring.group_meta_laboratorios">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>

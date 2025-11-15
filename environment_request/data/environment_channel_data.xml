@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Channel used to notify environment lifecycle events -->
+    <record id="env_channel_environment_requests" model="discuss.channel">
+        <field name="name">Solicitudes de entorno</field>
+        <field name="channel_type">channel</field>
+    </record>
+</odoo>

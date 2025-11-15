@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_environment_config_tree" model="ir.ui.view">
+        <field name="name">environment.config.tree</field>
+        <field name="model">environment.config</field>
+        <field name="arch" type="xml">
+            <tree string="Configuraciones de entornos">
+                <field name="name"/>
+                <field name="default_environment_type"/>
+                <field name="default_environment_version_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_environment_config_form" model="ir.ui.view">
+        <field name="name">environment.config.form</field>
+        <field name="model">environment.config</field>
+        <field name="arch" type="xml">
+            <form string="Configuración de entornos">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group string="Valores por defecto">
+                        <field name="default_environment_type"/>
+                        <field name="default_environment_version_id"/>
+                    </group>
+                    <group>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

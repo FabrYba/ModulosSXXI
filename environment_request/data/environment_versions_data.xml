@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!-- 14.x -->
+    <record id="env_version_14_0" model="environment.versions">
+        <field name="name">14.0</field>
+    </record>
+    <record id="env_version_14_0e" model="environment.versions">
+        <field name="name">14.0e</field>
+    </record>
+
+
+    <!-- 15.x -->
+    <record id="env_version_15_0" model="environment.versions">
+        <field name="name">15.0</field>
+    </record>
+    <record id="env_version_15_0e" model="environment.versions">
+        <field name="name">15.0e</field>
+    </record>
+
+
+    <!-- 16.x -->
+    <record id="env_version_16_0" model="environment.versions">
+        <field name="name">16.0</field>
+    </record>
+    <record id="env_version_16_0e" model="environment.versions">
+        <field name="name">16.0e</field>
+    </record>
+
+
+    <!-- 17.x -->
+    <record id="env_version_17_0" model="environment.versions">
+        <field name="name">17.0</field>
+    </record>
+    <record id="env_version_17_0e" model="environment.versions">
+        <field name="name">17.0e</field>
+    </record>
+
+
+    <!-- 18.x -->
+    <record id="env_version_18_0" model="environment.versions">
+        <field name="name">18.0</field>
+    </record>
+    <record id="env_version_18_0e" model="environment.versions">
+        <field name="name">18.0e</field>
+    </record>
+
+
+    <!-- 19.x -->
+    <record id="env_version_19_0" model="environment.versions">
+        <field name="name">19.0</field>
+    </record>
+    <record id="env_version_19_0e" model="environment.versions">
+        <field name="name">19.0e</field>
+    </record>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_environment_owner_user,access.environment.owner.user,model_environment_owner,base.group_user,1,1,1,0
+access_environment_owner_admin,access.environment.owner.admin,model_environment_owner,environment_request.group_environment_request_admin,1,1,1,1
+access_environment_versions_admin,access.environment.versions.admin,model_environment_versions,environment_request.group_environment_request_admin,1,1,1,1
+access_environment_config_admin,access.environment.config.admin,model_environment_config,environment_request.group_environment_request_admin,1,1,1,1

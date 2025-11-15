@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="group_environment_request_admin" model="res.groups">
+        <field name="name">Administrador de solicitudes de entornos</field>
+        <field name="category_id" ref="base.module_category_tools"/>
+    </record>
+</odoo>
