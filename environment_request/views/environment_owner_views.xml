@@ -60,17 +60,23 @@
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box"/>
-
+                    <div class="row">
+                        <div class="col-md" style="text-align: left">
+                            <h1><field name="name" readonly="1"/></h1>
+                        </div>
+                        <div class="col-md" style="text-align: right">
+                            <label for="create_date"/><br/>
+                            <h3><field name="create_date" readonly="1"/></h3>
+                        </div>
+                    </div>
                     <group>
                         <group>
-                            <field name="name" readonly="1"/>
-                            <field name="customer_id"/>
-                            <field name="user_id"/>
+                            <field name="customer_id" required="True"/>
+                            <field name="user_id" required="True"/>
                         </group>
                         <group>
-                            <field name="environment_type"/>
-                            <field name="environment_version_id"/>
-                            <field name="create_date" readonly="1"/>
+                            <field name="environment_type" required="True"/>
+                            <field name="environment_version_id" required="True"/>
                         </group>
                     </group>
 
