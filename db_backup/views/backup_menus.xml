@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="menu_backup_root"
+        name="Backup"
+        sequence="90"
+        groups="db_backup_demo.group_backup_manager"
+    />
+
+    <record id="action_backup_download" model="ir.actions.act_url">
+        <field name="name">Download backup</field>
+        <field name="url">/backup_manager/download</field>
+        <field name="target">self</field>
+    </record>
+
+    <menuitem
+        id="menu_backup_download"
+        name="Download backup"
+        parent="menu_backup_root"
+        action="action_backup_download"
+        groups="db_backup_demo.group_backup_manager"
+        sequence="10"
+    />
+</odoo>
