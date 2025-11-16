@@ -112,7 +112,7 @@ class EnvironmentOwner(models.Model):
 
         for record in self:
             if action_key == "requested":
-                action_label = _("Solicitado")
+                action_label = _("Solicitada")
             elif action_key == "dropped":
                 action_label = _("Eliminado")
             else:

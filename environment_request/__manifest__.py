@@ -2,7 +2,7 @@
 {
     "name": "Environment Requests Management",
     "summary": "Gestión de solicitudes de alta de entornos Odoo (demo, producción, desarrollo)",
-    "version": "17.0.1.0.0",
+    "version": "17.0",
     "author": "Ybaceta Fabrizio",
     "website": "https://www.linkedin.com/in/fybaceta/",
     "category": "Tools",
