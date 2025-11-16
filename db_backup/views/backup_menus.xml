@@ -4,7 +4,7 @@
         id="menu_backup_root"
         name="Backup"
         sequence="90"
-        groups="db_backup_demo.group_backup_manager"
+        groups="db_backup.group_backup_manager"
     />
 
     <record id="action_backup_download" model="ir.actions.act_url">
@@ -18,7 +18,7 @@
         name="Download backup"
         parent="menu_backup_root"
         action="action_backup_download"
-        groups="db_backup_demo.group_backup_manager"
+        groups="db_backup.group_backup_manager"
         sequence="10"
     />
 </odoo>

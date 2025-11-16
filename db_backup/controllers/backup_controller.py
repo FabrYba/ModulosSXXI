@@ -9,7 +9,7 @@ class BackupManagerController(http.Controller):
 
     @http.route("/backup_manager/download", type="http", auth="user")
     def backup_manager_download(self, **kwargs):
-        if not request.env.user.has_group("db_backup_demo.group_backup_manager"):
+        if not request.env.user.has_group("db_backup.group_backup_manager"):
             return request.not_found()
 
         db_name = request.env.cr.dbname
