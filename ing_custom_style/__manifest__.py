@@ -4,7 +4,7 @@
     'author': 'Ybaceta Fabrizio',
     'website': 'https://www.linkedin.com/in/fybaceta/',
     'category': 'Style',
-    'version': '1.0',
+    'version': '17.0',
         'depends': ['web'],
     'assets': {
         'web.assets_backend': [
